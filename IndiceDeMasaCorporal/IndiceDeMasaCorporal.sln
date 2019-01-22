@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{426B793E-31FC-4C9E-9B28-9E58B9B98551}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndiceDeMasaCorporal", "IndiceDeMasaCorporal\IndiceDeMasaCorporal.csproj", "{B27237D0-C8E8-4B7E-B7FA-6AD93D8692BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{426B793E-31FC-4C9E-9B28-9E58B9B98551}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{426B793E-31FC-4C9E-9B28-9E58B9B98551}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{426B793E-31FC-4C9E-9B28-9E58B9B98551}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{426B793E-31FC-4C9E-9B28-9E58B9B98551}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B27237D0-C8E8-4B7E-B7FA-6AD93D8692BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B27237D0-C8E8-4B7E-B7FA-6AD93D8692BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B27237D0-C8E8-4B7E-B7FA-6AD93D8692BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B27237D0-C8E8-4B7E-B7FA-6AD93D8692BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {AAB485B7-B002-40FC-90AD-895E4FE2C95F}
+		SolutionGuid = {F6BF57A6-B993-467C-9869-71EF53802A22}
 	EndGlobalSection
 EndGlobal

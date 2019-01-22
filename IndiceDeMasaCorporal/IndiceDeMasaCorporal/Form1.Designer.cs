@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace IndiceDeMasaCorporal
 {
 	partial class Form1
 	{
