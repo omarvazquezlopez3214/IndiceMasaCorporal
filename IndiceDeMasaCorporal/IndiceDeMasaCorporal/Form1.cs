@@ -134,21 +134,21 @@ namespace IndiceDeMasaCorporal
 
         public static void guardarArchivo(string diagnostico)
         {
-            string ruta = @"C:\Users\Roberto\Desktop\diagnostico.txt";
+            string ruta = @"C:\diagnostico.txt";
             StreamWriter sw;
             StreamReader sr;
             
-            if (!File.Exists(ruta))
-            {
-                File.Create(ruta);
-            }
+            //if (!File.Exists(ruta))
+            //{
+            //    File.Create(ruta);
+            //}
             sw = File.AppendText(ruta);
             sw.WriteLine(diagnostico);
             sw.Close();
             sr = new StreamReader(ruta);
             string line = sr.ReadToEnd();
             sr.Close();
-           
+
         }
     
         public static double CalcularPesoIdeal(string estatura)
