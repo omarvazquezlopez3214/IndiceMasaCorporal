@@ -8,19 +8,19 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 namespace IndiceDeMasaCorporal
 {
+
 	public partial class Form1 : Form
 	{
-		public Form1()
+        public string diagnostico;
+        public Form1()
 		{
 			InitializeComponent();
 		}
-
 		private void btnCalcular_Click(object sender, EventArgs e)
 		{
-			double est, pe;
 			string nombre;
 			int edad;
 			string sexo = string.Empty;
@@ -80,7 +80,6 @@ namespace IndiceDeMasaCorporal
 				estatura = Int32.Parse(txtEstatura.Text);
 				txtEstatura.Text = string.Format("{0:F2}",Convert.ToDouble(txtEstatura.Text));
 				es = txtEstatura.Text;
-				//est = double.Parse(es) / 100;
 			}
 			else
 			{
@@ -94,7 +93,6 @@ namespace IndiceDeMasaCorporal
 				peso = Int32.Parse(txtPeso.Text);
 				txtPeso.Text = string.Format("{0:F2}",Convert.ToDouble(txtPeso.Text));
 				pes = txtPeso.Text;
-				//pe = double.Parse(pes) / 100;
 			}
 			else
 			{
@@ -123,17 +121,37 @@ namespace IndiceDeMasaCorporal
 				composicionCorporal = "Obesidad";
 			}
 
-			label7.Text = "Nombre: "+ nombre + Environment.NewLine +
+			diagnostico = label7.Text = "Nombre: "+ nombre + Environment.NewLine +
 										"Edad: "+ edad + "años" + Environment.NewLine +
 										"Sexo: "+ sexo + Environment.NewLine +
 										"Peso Actual: "+ peso + "kg" + Environment.NewLine +
 										"Estatura: "+estatura + "cm" + Environment.NewLine +
 										"IMC: "+ i + "-->" + composicionCorporal + Environment.NewLine +
 										"Peso Ideal: "+ p + "kg" + Environment.NewLine + Environment.NewLine;
+            btnGuardar.Enabled = true;
 
 		}
 
-		public static double CalcularPesoIdeal(string estatura)
+        public static void guardarArchivo(string diagnostico)
+        {
+            string ruta = @"C:\Users\Roberto\Desktop\diagnostico.txt";
+            StreamWriter sw;
+            StreamReader sr;
+            
+            if (!File.Exists(ruta))
+            {
+                File.Create(ruta);
+            }
+            sw = File.AppendText(ruta);
+            sw.WriteLine(diagnostico);
+            sw.Close();
+            sr = new StreamReader(ruta);
+            string line = sr.ReadToEnd();
+            sr.Close();
+           
+        }
+
+        public static double CalcularPesoIdeal(string estatura)
 		{
 			double pesoIdeal;
 			double a = 0.75;
@@ -146,11 +164,22 @@ namespace IndiceDeMasaCorporal
 		{
 			double IMC;
 			IMC = ((double.Parse(peso)) /100) / Math.Pow((double.Parse(estatura)) / 100,2) * 100;
-			//IMC = (peso /(estatura * estatura) * 10000);
-			//IMC = peso / Math.Pow(estatura, 2);
 			double d = Math.Round(IMC, 2);
 			return d;
 		}
-	}
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            guardarArchivo(diagnostico);
+            MessageBox.Show("El archivo se generó correctamente con la información.");
+            btnGuardar.Enabled = false;
+            diagnostico = string.Empty;
+            txtEdad.Text = "";
+            txtEstatura.Text = "";
+            txtNombre.Text = "";
+            txtPeso.Text = "";
+            label7.Text = "";
+        }
+    }
 
 }
