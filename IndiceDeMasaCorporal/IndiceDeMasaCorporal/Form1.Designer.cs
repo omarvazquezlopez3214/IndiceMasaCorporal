@@ -42,9 +42,8 @@
 			this.rbFemenino = new System.Windows.Forms.RadioButton();
 			this.btnCalcular = new System.Windows.Forms.Button();
 			this.btnGuardar = new System.Windows.Forms.Button();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label6 = new System.Windows.Forms.Label();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.label7 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -172,26 +171,26 @@
 			this.btnGuardar.Text = "Guardar";
 			this.btnGuardar.UseVisualStyleBackColor = true;
 			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(449, 85);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(330, 199);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox1.TabIndex = 13;
-			this.pictureBox1.TabStop = false;
-			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Elephant", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label6.ForeColor = System.Drawing.Color.DarkGoldenrod;
-			this.label6.Location = new System.Drawing.Point(449, 35);
+			this.label6.Location = new System.Drawing.Point(539, 9);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(270, 25);
+			this.label6.Size = new System.Drawing.Size(135, 25);
 			this.label6.TabIndex = 14;
-			this.label6.Text = "Indice de Masa Corporal";
+			this.label6.Text = "Diagnóstico";
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Enabled = false;
+			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label7.Location = new System.Drawing.Point(480, 66);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(0, 16);
+			this.label7.TabIndex = 15;
 			// 
 			// Form1
 			// 
@@ -199,8 +198,8 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.LightSalmon;
 			this.ClientSize = new System.Drawing.Size(800, 362);
+			this.Controls.Add(this.label7);
 			this.Controls.Add(this.label6);
-			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.btnGuardar);
 			this.Controls.Add(this.btnCalcular);
 			this.Controls.Add(this.rbFemenino);
@@ -219,7 +218,6 @@
 			this.MinimizeBox = false;
 			this.Name = "Form1";
 			this.Text = "Peso ideal / IMC";
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -240,8 +238,8 @@
 		private System.Windows.Forms.RadioButton rbFemenino;
 		private System.Windows.Forms.Button btnCalcular;
 		private System.Windows.Forms.Button btnGuardar;
-		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Label label7;
 	}
 }
 
