@@ -20,11 +20,13 @@ namespace IndiceDeMasaCorporal
 
 		private void btnCalcular_Click(object sender, EventArgs e)
 		{
+			double est, pe;
 			string nombre;
 			int edad;
 			string sexo = string.Empty;
 			int peso;
 			int estatura;
+			string es, pes;
 			//Validación de campos vacios
 			if (txtNombre.Text == "" || txtEdad.Text == "" || txtEstatura.Text == "" || txtPeso.Text == "")
 			{
@@ -76,6 +78,9 @@ namespace IndiceDeMasaCorporal
 			if (expresionRegularEstatura.IsMatch(txtEstatura.Text))
 			{
 				estatura = Int32.Parse(txtEstatura.Text);
+				txtEstatura.Text = string.Format("{0:F2}",Convert.ToDouble(txtEstatura.Text));
+				es = txtEstatura.Text;
+				//est = double.Parse(es) / 100;
 			}
 			else
 			{
@@ -87,14 +92,17 @@ namespace IndiceDeMasaCorporal
 			if (expresionRegularPeso.IsMatch(txtPeso.Text))
 			{
 				peso = Int32.Parse(txtPeso.Text);
+				txtPeso.Text = string.Format("{0:F2}",Convert.ToDouble(txtPeso.Text));
+				pes = txtPeso.Text;
+				//pe = double.Parse(pes) / 100;
 			}
 			else
 			{
 				MessageBox.Show("Solo valores numéricos enteros");
 				return;
 			}
-			float p = CalcularPesoIdeal(estatura);
-			double i = CalcularIMC(estatura, peso);
+			double p = CalcularPesoIdeal(es);
+			double i = CalcularIMC(es, pes);
 
 			string composicionCorporal = string.Empty;
 
@@ -125,20 +133,22 @@ namespace IndiceDeMasaCorporal
 
 		}
 
-		public static float CalcularPesoIdeal(float estatura)
+		public static double CalcularPesoIdeal(string estatura)
 		{
-			float pesoIdeal;
-			float a = 0.75F;
-			pesoIdeal = (a *(estatura - 150) + 50);
+			double pesoIdeal;
+			double a = 0.75;
+			pesoIdeal = (a *(double.Parse(estatura) - 150) + 50);
 
 			return pesoIdeal;
 		}
 
-		public static double CalcularIMC(float estatura, float peso)
+		public static double CalcularIMC(string estatura, string peso)
 		{
-			float IMC;
-			IMC = (peso /(estatura * estatura) * 10000);
-			double d = Math.Round(IMC, 1);
+			double IMC;
+			IMC = ((double.Parse(peso)) /100) / Math.Pow((double.Parse(estatura)) / 100,2) * 100;
+			//IMC = (peso /(estatura * estatura) * 10000);
+			//IMC = peso / Math.Pow(estatura, 2);
+			double d = Math.Round(IMC, 2);
 			return d;
 		}
 	}
