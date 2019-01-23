@@ -103,7 +103,7 @@ namespace IndiceDeMasaCorporal
 			double i = CalcularIMC(es, pes);
 
 			string composicionCorporal = string.Empty;
-
+        
 			if(i <= 18.5F)
 			{
 				composicionCorporal = "Peso inferior al normal";
