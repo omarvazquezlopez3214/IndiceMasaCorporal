@@ -150,7 +150,7 @@ namespace IndiceDeMasaCorporal
             sr.Close();
            
         }
-
+    
         public static double CalcularPesoIdeal(string estatura)
 		{
 			double pesoIdeal;
